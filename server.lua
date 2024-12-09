@@ -44,7 +44,7 @@ ESX.RegisterUsableItem(Config.items.lockpick, function(source)
 
         if data.lockpick then
             if isDoorClosed(i.id) then
-                return TriggerClientEvent("brlockpick:lockpickThatDoor", source, i.id)
+                return TriggerClientEvent("br_lockpick:lockpickThatDoor", source, i.id)
             else
                 return TriggerClientEvent("ox_lib:notify", source, { title = Config.locale.doorOpen })
             end
@@ -95,10 +95,10 @@ ESX.RegisterUsableItem(Config.items.hacking, function (source)
     TriggerClientEvent("ox_lib:notify", source, { title = Config.locale.noDoorClose })
 end)
 
-RegisterNetEvent("brlockpick:openDoor")
-AddEventHandler("brlockpick:openDoor", openDoor)
+RegisterNetEvent("br_lockpick:openDoor")
+AddEventHandler("br_lockpick:openDoor", openDoor)
 
-RegisterNetEvent("brlockpick:broLostLmao")
-AddEventHandler("brlockpick:broLostLmao", function (item)
+RegisterNetEvent("br_lockpick:broLostLmao")
+AddEventHandler("br_lockpick:broLostLmao", function (item)
     exports.ox_inventory:RemoveItem(source, item, 1, nil, nil, true)
 end)

@@ -6,14 +6,14 @@ local currentDoor = nil
 local function hackingCompleted(success)
     TriggerEvent("mhacking:hide")
     if success then
-        TriggerServerEvent("brlockpick:openDoor", currentDoor)
+        TriggerServerEvent("br_lockpick:openDoor", currentDoor)
     else
-        TriggerServerEvent("brlockpick:broLostLmao", Config.items.hacking)
+        TriggerServerEvent("br_lockpick:broLostLmao", Config.items.hacking)
     end
 end
 
-RegisterNetEvent("brlockpick:lockpickThatDoor")
-AddEventHandler("brlockpick:lockpickThatDoor", function (doorId)
+RegisterNetEvent("br_lockpick:lockpickThatDoor")
+AddEventHandler("br_lockpick:lockpickThatDoor", function (doorId)
     currentDoor = doorId
     SetNuiFocus(true, true)
     SendNUIMessage({ type = "open" })
@@ -21,7 +21,7 @@ AddEventHandler("brlockpick:lockpickThatDoor", function (doorId)
 end)
 
 RegisterNUICallback("won", function ()
-    TriggerServerEvent("brlockpick:openDoor", currentDoor)
+    TriggerServerEvent("br_lockpick:openDoor", currentDoor)
     TriggerEvent("dpemote:stoplatestemote")
     SetNuiFocus(false, false)
 end)
@@ -31,7 +31,7 @@ RegisterNUICallback("lost", function ()
     TriggerEvent("dpemote:stoplatestemote")
     TriggerEvent("dpemote:playemote", "damn")
     SetNuiFocus(false, false)
-    TriggerServerEvent("brlockpick:broLostLmao", Config.items.lockpick)
+    TriggerServerEvent("br_lockpick:broLostLmao", Config.items.lockpick)
 end)
 
 RegisterNetEvent("br_lockpick:hackDoor")
