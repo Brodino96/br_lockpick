@@ -5,6 +5,7 @@ local currentDoor = nil
 
 local function hackingCompleted(success)
     TriggerEvent("mhacking:hide")
+    TriggerEvent("dpemote:stoplatestemote")
     if success then
         TriggerServerEvent("br_lockpick:openDoor", currentDoor)
     else
@@ -37,6 +38,7 @@ end)
 RegisterNetEvent("br_lockpick:hackDoor")
 AddEventHandler("br_lockpick:hackDoor", function (doorId)
     TriggerEvent("mhacking:show")
+    TriggerEvent("dpemote:playemote", "tablet2")
     currentDoor = doorId
     TriggerEvent("mhacking:start", 3, 60, hackingCompleted)
 end)
