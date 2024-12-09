@@ -1,0 +1,14 @@
+{
+    "items": {
+        "lockpick": "lockpick",
+        "hacking": "hacking_device"
+    },
+
+    "locale": {
+        "doorOpen": "La porta è aperta",
+        "unpickable": "Il lucchetto è troppo resistente",
+        "noDoorClose": "Nessuna porta nelle vicinanze",
+        "lockpickBroken": "Il grimaldello si è rotto",
+        "unhackable": "Il lucchetto non è elettronico"
+    }
+}
