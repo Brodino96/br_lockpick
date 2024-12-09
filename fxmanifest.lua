@@ -27,3 +27,5 @@ files{
 }
 
 ui_page "NUI/index.html"
+
+dependency "mhacking"
